@@ -58,6 +58,15 @@ Update PHP code:
 
 Update the `plugins` section with the correct plugin ZIP URL. You'll need to upload your built plugin to get the URL, or use a local path for testing.
 
+### AGENTS.md
+
+Update the AGENTS.md file with your plugin-specific information:
+- Update the development commands if they differ from the template
+- Update the project structure if you renamed blocks
+- Update template placeholders section if needed
+
+This file provides instructions for AI agents working on your plugin.
+
 ## Step-by-Step Setup
 
 ### 1. Create Repository
