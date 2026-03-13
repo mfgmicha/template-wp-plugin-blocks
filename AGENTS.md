@@ -1,11 +1,12 @@
-# template-wp-plugin-blocks
+# WordPress Block Plugin Template
 
-WordPress Block Plugin Template.
+Template for creating WordPress block plugins with multiple blocks support.
 
 ## General Guidelines
 
 - Always commit and push changes after completing tasks
 - Always use the `gh` CLI for GitHub operations (issues, PRs, etc.) - never use curl for GitHub API calls
+- When updating template, ensure backward compatibility where possible
 
 ## Development Commands
 
@@ -24,11 +25,9 @@ WordPress Block Plugin Template.
 git add -A
 git commit --no-verify -m "type: description"
 
-# Push to remote
-git push https://mfgmicha:$(gh auth token)@github.com/mfgmicha/template-wp-plugin-blocks.git main
-
-# Or if git remote is set:
-git push
+# Push to remote (set remote first if needed)
+git remote add origin <your-repo-url>
+git push -u origin main
 ```
 
 Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lowercase)
@@ -51,15 +50,29 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lower
 
 This template supports multiple blocks. Each block should be in its own subfolder under `src/`. The build script uses `--blocks-manifest` to generate a blocks-manifest.php file that registers all blocks automatically.
 
+## Template Placeholders
+
+When creating a new plugin from this template, search and replace these values:
+
+| Placeholder | Example Value | Description |
+|-------------|---------------|-------------|
+| `template-wp-plugin-blocks` | `my-awesome-blocks` | Package name (kebab-case) |
+| `Template WP Plugin Blocks` | `My Awesome Blocks` | Plugin display name |
+| `template-block` | `awesome-block` | Block folder name (kebab-case) |
+| `mfgmicha_` | `myprefix_` | PHP function prefix |
+| `TemplateWpPluginBlocks` | `MyAwesomeBlocks` | PHP package name |
+
+Files containing placeholders:
+- `package.json`
+- `plugin.php`
+- `src/template-block/block.json`
+- `.wordpress/blueprint.json`
+
 ## Requirements
 
 - Node.js >= 20.0.0
 - npm >= 8.0.0
 
-## Using as Template
+## Creating a New Plugin
 
-1. Clone this repository
-2. Update `package.json` with new plugin name
-3. Update `plugin.php` header and function names
-4. Create blocks in `src/` subfolders
-5. Update `.wordpress/blueprint.json` with correct plugin URL
+For detailed instructions on creating a new plugin from this template, see [docs/SETUP.md](docs/SETUP.md).

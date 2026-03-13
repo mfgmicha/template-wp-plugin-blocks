@@ -27,3 +27,7 @@ npm run plugin-zip
 ## License
 
 GPLv2 or later
+
+## Using as Template
+
+To create a new WordPress block plugin from this template, see the detailed setup guide in [docs/SETUP.md](docs/SETUP.md).
