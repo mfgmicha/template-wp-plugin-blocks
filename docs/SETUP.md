@@ -88,7 +88,11 @@ npm install
 
 Run a global search and replace in your editor for all placeholder values.
 
-### 4. Build and Verify
+### 4. Update AGENTS.md
+
+Review and update AGENTS.md with your plugin-specific information (see Files to Update section).
+
+### 5. Build and Verify
 
 ```bash
 npm run build
@@ -131,6 +135,7 @@ After setup, verify everything works:
 - [ ] `npm run build` completes without errors
 - [ ] `build/blocks-manifest.php` is generated
 - [ ] All placeholder values are replaced
+- [ ] AGENTS.md is updated with plugin-specific information
 - [ ] Block appears in WordPress block inserter
 - [ ] Block saves and renders correctly
 
