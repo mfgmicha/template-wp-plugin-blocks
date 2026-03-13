@@ -21,6 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register the block.
  */
 if ( ! function_exists( 'mfgmicha_block_init' ) ) {
+	/**
+	 * Initialize blocks.
+	 */
 	function mfgmicha_block_init() {
 		wp_register_block_types_from_metadata_collection(
 			plugin_dir_path( __FILE__ ) . 'build',

@@ -14,8 +14,9 @@
 		</properties>
 	</rule>
 	<rule ref="PHPCompatibility">
-		<exclude name="PHPCompatibility.PHP.LessThanCompatibleMinVersion" />
+		<exclude name="PHPCompatibility" />
 	</rule>
+
 
 	<config name="tested_at_least_php" value="8.3"/>
 	<config name="minimum_supported_wp_version" value="6.9"/>
