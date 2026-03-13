@@ -3,8 +3,8 @@
  * Plugin Name:       Template WP Plugin Blocks
  * Description:       A clean and minimal WordPress Plugin with block.
  * Version:           0.1.0
- * Requires at least: 6.6
- * Requires PHP:      7.4
+ * Requires at least: 6.9
+ * Requires PHP:      8.3
  * Author:            Micha Krapp
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
