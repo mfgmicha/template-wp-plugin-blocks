@@ -1,0 +1,14 @@
+includes:
+	- vendor/szepeviktor/phpstan-wordpress/wordpress-extension.neon
+
+parameters:
+	level: 5
+	paths:
+		- plugin.php
+		- build/blocks-manifest.php
+	scanFiles:
+		- build/blocks-manifest.php
+	ignoreErrors:
+		- '#Function (file_get_contents|wp_register_block_types_from_metadata_collection) not found#'
+		- '#Class WordPress not found#'
+		- '#Function (wp_register_block_types_from_metadata_collection) not found#'

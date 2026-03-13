@@ -11,10 +11,14 @@ Template for creating WordPress block plugins with multiple blocks support.
 ## Development Commands
 
 - `npm install` - Install dependencies
+- `composer install` - Install PHP dependencies (PHPCS, PHPStan)
 - `npm run build` - Build for production (with blocks-manifest)
 - `npm run start` - Start development watcher
 - `npm run lint:js` - Lint JavaScript
 - `npm run lint:css` - Lint CSS
+- `composer run phpcs` - Lint PHP (PHPCS with WordPress Coding Standards)
+- `composer run phpcbf` - Fix PHP linting issues (PHPCBF)
+- `composer run phpstan` - Run static analysis (PHPStan)
 - `npm run format` - Format code
 - `npm run plugin-zip` - Create plugin zip
 
@@ -72,6 +76,8 @@ Files containing placeholders:
 
 - Node.js >= 20.0.0
 - npm >= 8.0.0
+- PHP >= 8.3
+- Composer
 
 ## Creating a New Plugin
 
