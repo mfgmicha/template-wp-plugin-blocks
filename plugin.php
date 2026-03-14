@@ -28,10 +28,7 @@ if ( ! function_exists( 'mfgmicha_block_init' ) ) {
 	 * @return void
 	 */
 	function mfgmicha_block_init(): void {
-		wp_register_block_types_from_metadata_collection(
-			plugin_dir_path( __FILE__ ) . 'build',
-			plugin_dir_path( __FILE__ ) . 'build/blocks-manifest.php',
-		);
+		register_block_type( plugin_dir_path( __FILE__ ) . 'build/template-block' );
 	}
 }
 add_action( 'init', 'mfgmicha_block_init' );
