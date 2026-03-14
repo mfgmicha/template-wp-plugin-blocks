@@ -15,6 +15,13 @@
 	<rule ref="PHPCompatibility">
 		<exclude name="PHPCompatibility" />
 	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints">
+		<exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes" />
+	</rule>
+	<rule ref="Yoast">
+		<exclude name="Yoast.Files.FileName" />
+		<exclude name="Yoast.Commenting" />
+	</rule>
 
 
 	<config name="tested_at_least_php" value="8.3"/>
