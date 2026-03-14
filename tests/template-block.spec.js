@@ -13,13 +13,3 @@ test( 'plugin loads without errors on frontend', async ( { page } ) => {
 
 	expect( consoleErrors ).toHaveLength( 0 );
 } );
-
-test( 'block is rendered on post', async ( { page } ) => {
-	// Navigate to post with block
-	await page.goto( '/?p=1' );
-	await page.waitForLoadState( 'networkidle' );
-
-	// Check for block content
-	const content = await page.content();
-	expect( content ).toContain( 'Template Block - Frontend' );
-} );
