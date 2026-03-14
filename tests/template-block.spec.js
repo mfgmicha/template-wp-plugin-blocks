@@ -1,15 +1,20 @@
 const { test, expect } = require( '@playwright/test' );
 
-test( 'plugin loads without errors on frontend', async ( { page } ) => {
-	await page.goto( '/' );
+test( 'block renders on frontend', async ( { page } ) => {
+	await page.goto( '/test-block/' );
 	await page.waitForLoadState( 'networkidle' );
 
-	const consoleErrors = [];
-	page.on( 'console', ( msg ) => {
-		if ( msg.type() === 'error' ) {
-			consoleErrors.push( msg.text() );
-		}
-	} );
+	await expect( page.locator( 'p:has-text("Template Block - Frontend")' ) ).toBeVisible();
+} );
 
-	expect( consoleErrors ).toHaveLength( 0 );
+test( 'block works in editor', async ( { page } ) => {
+	await page.goto( '/wp-admin/edit.php?post_type=post' );
+	await page.waitForLoadState( 'networkidle' );
+
+	await page.get_by_role( 'link', { name: 'Edit "Test Block Post"' } ).click();
+	await page.waitForLoadState( 'networkidle' );
+
+	await expect(
+		page.locator( 'text=Your site doesn\'t include support for' )
+	).not.toBeVisible();
 } );
