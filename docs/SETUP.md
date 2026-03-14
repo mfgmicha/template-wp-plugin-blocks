@@ -82,6 +82,7 @@ https://github.com/new?template_name=template-wp-plugin-blocks&template_owner=mf
 git clone https://github.com/your-username/your-plugin-name.git
 cd your-plugin-name
 npm install
+composer install
 ```
 
 ### 3. Update Placeholders
@@ -136,6 +137,9 @@ After setup, verify everything works:
 - [ ] `build/blocks-manifest.php` is generated
 - [ ] All placeholder values are replaced
 - [ ] AGENTS.md is updated with plugin-specific information
+- [ ] `composer run phpcs` passes without errors
+- [ ] `composer run phpstan` passes without errors
+- [ ] `npm run test` passes
 - [ ] Block appears in WordPress block inserter
 - [ ] Block saves and renders correctly
 

@@ -13,12 +13,20 @@ Try the block instantly in your browser without installing WordPress locally:
 ```bash
 # Install dependencies
 npm install
+composer install
 
 # Start development
 npm run start
 
 # Build for production
 npm run build
+
+# Run tests
+npm run test
+
+# Run linters
+composer run phpcs
+composer run phpstan
 
 # Create plugin zip
 npm run plugin-zip

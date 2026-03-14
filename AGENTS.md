@@ -15,6 +15,7 @@ Template for creating WordPress block plugins with multiple blocks support.
 - `composer install` - Install PHP dependencies (PHPCS, PHPStan)
 - `npm run build` - Build for production (with blocks-manifest)
 - `npm run start` - Start development watcher
+- `npm run test` - Run Playwright tests
 - `npm run lint:js` - Lint JavaScript
 - `npm run lint:css` - Lint CSS
 - `composer run phpcs` - Lint PHP (PHPCS with WordPress Coding Standards)
