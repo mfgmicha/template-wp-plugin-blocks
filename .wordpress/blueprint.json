@@ -1,6 +1,6 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/",
+	"landingPage": "/?p=2",
 	"preferredVersions": {
 		"wp": "latest",
 		"php": "8.4"
@@ -16,6 +16,14 @@
 		{
 			"step": "activatePlugin",
 			"pluginPath": "template-wp-plugin-blocks-main/plugin.php"
+		},
+		{
+			"step": "createPost",
+			"post": {
+				"title": "Test Block Post",
+				"content": "<!-- wp:mfgmicha/block -->",
+				"status": "publish"
+			}
 		}
 	]
 }
