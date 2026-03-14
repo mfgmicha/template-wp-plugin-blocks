@@ -5,6 +5,9 @@
 		"wp": "latest",
 		"php": "8.4"
 	},
+	"features": {
+		"networking": true
+	},
 	"steps": [
 		{
 			"step": "installPlugin",
