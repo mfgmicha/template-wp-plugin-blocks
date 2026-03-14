@@ -1,17 +1,25 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/?p=1",
+	"landingPage": "/?p=2",
 	"preferredVersions": {
 		"wp": "latest",
 		"php": "8.4"
 	},
-	"features": {
-		"networking": true
-	},
 	"steps": [
 		{
-			"step": "login",
-			"username": "admin"
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://github.com/mfgmicha/template-wp-plugin-blocks/archive/refs/heads/main.zip"
+			}
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "template-wp-plugin-blocks-main/plugin.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp post create --post_title='Test Block Post' --post_content='<!-- wp:mfgmicha/block -->' --post_status=publish"
 		}
 	]
 }
