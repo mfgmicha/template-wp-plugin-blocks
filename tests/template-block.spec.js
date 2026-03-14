@@ -14,13 +14,12 @@ test( 'plugin loads without errors on frontend', async ( { page } ) => {
 	expect( consoleErrors ).toHaveLength( 0 );
 } );
 
-test( 'plugin is active and blocks are registered', async ( { page } ) => {
-	// Check plugin is active by verifying block registration
-	// The block assets should be present when plugin is active
-	await page.goto( '/' );
+test( 'block is rendered on post', async ( { page } ) => {
+	// Navigate to post with block
+	await page.goto( '/?p=1' );
 	await page.waitForLoadState( 'networkidle' );
 
-	// Check page loaded successfully
-	const title = await page.title();
-	expect( title ).toContain( 'WordPress' );
+	// Check for block content
+	const content = await page.content();
+	expect( content ).toContain( 'Template Block - Frontend' );
 } );
