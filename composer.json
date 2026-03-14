@@ -21,8 +21,8 @@
 		}
 	},
 	"scripts": {
-		"phpcs": "phpcs --standard=phpcs.xml.dist",
-		"phpcbf": "phpcbf --standard=phpcs.xml.dist",
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf",
 		"phpstan": "phpstan analyse --memory-limit=512M"
 	}
 }
