@@ -5,7 +5,3 @@ parameters:
 	level: 5
 	paths:
 		- plugin.php
-	ignoreErrors:
-		- '#Function (file_get_contents|wp_register_block_types_from_metadata_collection) not found#'
-		- '#Class WordPress not found#'
-		- '#Function (wp_register_block_types_from_metadata_collection) not found#'
