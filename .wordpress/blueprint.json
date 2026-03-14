@@ -18,12 +18,8 @@
 			"pluginPath": "template-wp-plugin-blocks-main/plugin.php"
 		},
 		{
-			"step": "createPost",
-			"post": {
-				"title": "Test Block Post",
-				"content": "<!-- wp:mfgmicha/block -->",
-				"status": "publish"
-			}
+			"step": "wp-cli",
+			"command": "wp post create --post_title='Test Block Post' --post_content='<!-- wp:mfgmicha/block -->' --post_status=publish"
 		}
 	]
 }
