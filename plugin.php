@@ -24,7 +24,7 @@ if ( ! function_exists( 'mfgmicha_block_init' ) ) {
 	/**
 	 * Initialize blocks.
 	 */
-	function mfgmicha_block_init() {
+	function mfgmicha_block_init(): void {
 		wp_register_block_types_from_metadata_collection(
 			plugin_dir_path( __FILE__ ) . 'build',
 			plugin_dir_path( __FILE__ ) . 'build/blocks-manifest.php'
