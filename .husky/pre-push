@@ -8,3 +8,5 @@ composer run phpcs
 
 echo "Running PHPStan..."
 composer run phpstan
+
+rm -rf ./test-results
