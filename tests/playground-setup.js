@@ -8,7 +8,7 @@ async function startPlaygroundServer() {
 	try {
 		server = await runCLI({
 			command: 'server',
-			php: '8.4',
+			php: '8.3',
 			wp: 'latest',
 			port: 8890,
 			mount: [

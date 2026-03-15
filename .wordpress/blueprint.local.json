@@ -3,7 +3,7 @@
 	"landingPage": "/test-block/",
 	"preferredVersions": {
 		"wp": "latest",
-		"php": "8.4"
+		"php": "8.3"
 	},
 	"steps": [
 		{
