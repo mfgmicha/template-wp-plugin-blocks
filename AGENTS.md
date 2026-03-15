@@ -16,15 +16,15 @@ Template for creating WordPress block plugins with multiple blocks support.
 - `npm install` - Install dependencies
 - `composer install` - Install PHP dependencies (PHPCS, PHPStan)
 - `npm run build` - Build for production (with blocks-manifest)
-- `npm run start` - Start development watcher
+- `npm run start` - Start development server (WordPress Playground)
 - `npm run test` - Run Playwright tests
 - `npm run lint:js` - Lint JavaScript
 - `npm run lint:css` - Lint CSS
-- `composer run phpcs` - Lint PHP (PHPCS with WordPress Coding Standards)
-- `composer run phpcbf` - Fix PHP linting issues (PHPCBF)
-- `composer run phpstan` - Run static analysis (PHPStan)
-- `npm run format` - Format code
-- `npm run plugin-zip` - Create plugin zip
+- `npm run format` - Format code (Prettier)
+- `npm run zip` - Create plugin zip
+- `composer run lint` - Lint PHP (PHPCS with WordPress Coding Standards)
+- `composer run lint:fix` - Fix PHP linting issues (PHPCBF)
+- `composer run analyse` - Run static analysis (PHPStan)
 
 ## Commit Workflow
 
@@ -40,6 +40,11 @@ git push -u origin main
 
 Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lowercase)
 
+## Git Hooks
+
+- **pre-commit**: Add custom checks here if needed
+- **pre-push**: Runs build, format, linting, and static analysis before pushing. Removes `test-results/` directory after checks.
+
 ## Project Structure
 
 - `plugin.php` - Main plugin file (block registration)
@@ -50,8 +55,12 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lower
 - `src/<block-folder>/save.js` - Save component
 - `src/<block-folder>/style.scss` - Frontend styles
 - `src/<block-folder>/editor.scss` - Editor styles
+- `build/` - Generated build files (do not edit)
+- `tests/` - Playwright tests
 - `.husky/` - Git hooks
-- `commitlint.config.js` - Commit message rules
+- `.eslintrc` - ESLint configuration
+- `phpcs.xml.dist` - PHPCS ruleset
+- `phpstan.neon` - PHPStan configuration
 - `.wordpress/blueprint.json` - WordPress Playground blueprint
 
 ## Multiple Blocks

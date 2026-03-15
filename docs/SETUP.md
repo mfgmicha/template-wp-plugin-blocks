@@ -101,6 +101,8 @@ npm run build
 
 This creates the `build/` folder with compiled assets and `build/blocks-manifest.php`.
 
+> **Note:** The pre-push hook automatically runs `npm run build`, format, linting, and static analysis before pushing. Use `git push --no-verify` to bypass if needed.
+
 ### 5. Test in WordPress
 
 Option A - Use WordPress Playground:
@@ -137,8 +139,8 @@ After setup, verify everything works:
 - [ ] `build/blocks-manifest.php` is generated
 - [ ] All placeholder values are replaced
 - [ ] AGENTS.md is updated with plugin-specific information
-- [ ] `composer run phpcs` passes without errors
-- [ ] `composer run phpstan` passes without errors
+- [ ] `composer run lint` passes without errors
+- [ ] `composer run analyse` passes without errors
 - [ ] `npm run test` passes
 - [ ] Block appears in WordPress block inserter
 - [ ] Block saves and renders correctly

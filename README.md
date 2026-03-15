@@ -25,11 +25,11 @@ npm run build
 npm run test
 
 # Run linters
-composer run phpcs
-composer run phpstan
+composer run lint
+composer run analyse
 
 # Create plugin zip
-npm run plugin-zip
+npm run zip
 ```
 
 ## License
