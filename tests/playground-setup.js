@@ -1,26 +1,24 @@
-const { runCLI } = require( '@wp-playground/cli' );
-const path = require( 'path' );
+import { runCLI } from '@wp-playground/cli';
+import { resolve } from 'path';
 
-const projectRoot = path.resolve( __dirname, '..' );
+const projectRoot = resolve(__dirname, '..');
 
 async function startPlaygroundServer() {
-	console.log( 'Starting WordPress Playground...' );
-
 	let server;
 	try {
-		server = await runCLI( {
+		server = await runCLI({
 			command: 'server',
-			php: '8.4',
+			php: '8.3',
 			wp: 'latest',
 			port: 8890,
 			mount: [
 				{
 					hostPath: projectRoot,
-					vfsPath: '/wordpress/wp-content/plugins/template-wp-plugin-blocks',
+					vfsPath:
+						'/wordpress/wp-content/plugins/template-wp-plugin-blocks',
 				},
 			],
 			blueprint: {
-				preferredVersions: { wp: 'latest', php: '8.4' },
 				steps: [
 					{
 						step: 'activatePlugin',
@@ -28,27 +26,27 @@ async function startPlaygroundServer() {
 					},
 				],
 			},
-		} );
-	} catch ( e ) {
-		console.error( 'Failed to start Playground:', e.message );
+		});
+	} catch (e) {
+		console.error('Failed to start Playground:', e.message);
 		throw e;
 	}
 
-	console.log( `Playground started at ${ server?.url || server?.address?.() }` );
+	console.log(`Playground started at ${server?.url || server?.address?.()}`);
 
 	return {
 		close: async () => {
-			console.log( 'Stopping WordPress Playground...' );
+			console.log('Stopping WordPress Playground...');
 			try {
-				if ( server.close ) {
+				if (server.close) {
 					await server.close();
 				}
-			} catch ( e ) {
-				console.warn( 'Error closing server:', e.message );
+			} catch (e) {
+				console.warn('Error closing server:', e.message);
 			}
 		},
 		url: server?.url || `http://127.0.0.1:8890`,
 	};
 }
 
-module.exports = { startPlaygroundServer };
+export { startPlaygroundServer };

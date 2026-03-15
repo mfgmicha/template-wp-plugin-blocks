@@ -1,5 +1,4 @@
 node_modules/
-.wordpress/
 *.zip
 .DS_Store
 vendor/

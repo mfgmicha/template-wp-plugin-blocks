@@ -1,23 +1,25 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'template-block' => array(
+	'test-block' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'mfgmicha/block',
+		'name' => 'mfgmicha/test-block',
 		'version' => '0.1.0',
-		'title' => 'Template Block',
+		'title' => 'Test Block',
 		'category' => 'widgets',
-		'description' => 'A clean and minimal WordPress block.',
-		'keywords' => array(
-			'template',
-			'block'
+		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
 		),
 		'supports' => array(
 			'html' => false
 		),
-		'textdomain' => 'template-wp-plugin-blocks',
+		'textdomain' => 'test-block',
 		'editorScript' => 'file:./index.js',
-		'style' => 'file:./style.css'
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
 	)
 );

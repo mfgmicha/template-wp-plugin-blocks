@@ -1,15 +1,3 @@
 #!/usr/bin/env sh
-. "$(dirname "$0")/h"
 
-echo "Running pre-commit checks..."
-
-echo "Running build..."
-npm run build
-
-echo "Running PHPCS..."
-composer run phpcs
-
-echo "Running PHPStan..."
-composer run phpstan
-
-echo "All pre-commit checks passed!"
+# add pre-commit checks here

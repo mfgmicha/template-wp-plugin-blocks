@@ -4,4 +4,10 @@ includes:
 parameters:
 	level: 6
 	paths:
-		- plugin.php
+		- .
+	excludePaths:
+		- .husky
+		- build
+		- docs
+		- vendor (?)
+		- node_modules (?)
