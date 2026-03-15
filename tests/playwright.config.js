@@ -1,7 +1,7 @@
-const { defineConfig, devices } = require( '@playwright/test' );
+import { defineConfig, devices } from '@playwright/test';
 
-module.exports = defineConfig( {
-	testDir: './tests',
+export default defineConfig( {
+	testDir: './specs/',
 	timeout: 30000,
 	expect: {
 		timeout: 5000,
@@ -29,6 +29,6 @@ module.exports = defineConfig( {
 			},
 		},
 	],
-	globalSetup: require.resolve( './tests/global-setup.js' ),
-	globalTeardown: require.resolve( './tests/global-teardown.js' ),
+	globalSetup: require.resolve( './global-setup.js' ),
+	globalTeardown: require.resolve( './global-teardown.js' ),
 } );
