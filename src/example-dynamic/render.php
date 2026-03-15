@@ -8,8 +8,11 @@
  *     $block (WP_Block): The block instance.
  *
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
+ *
+ * @package mfgmicha/example-dynamic
  */
+
 ?>
-<p <?php echo get_block_wrapper_attributes(); ?>>
+<p <?php echo get_block_wrapper_attributes(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php esc_html_e( 'Example Dynamic – hello from a dynamic block!', 'example-dynamic' ); ?>
 </p>
