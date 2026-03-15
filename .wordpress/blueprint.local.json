@@ -1,0 +1,18 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/test-block/",
+	"preferredVersions": {
+		"wp": "latest",
+		"php": "8.4"
+	},
+	"steps": [
+		{
+			"step": "wp-cli",
+			"command": "wp post create --post_title='Test Block Post' --post_slug='test-block' --post_content='<!-- wp:mfgmicha/block -->' --post_status=publish"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp post create --post_title='Test Block Post' --post_slug='test-block' --post_content='<!-- wp:mfgmicha/block -->' --post_status=publish"
+		}
+	]
+}
