@@ -1,12 +1,11 @@
 #!/usr/bin/env sh
 
-echo "Running build..."
+# Check if build is current
 npm run build
 
-echo "Running PHPCS..."
-composer run phpcs
+# Code quality check
+composer run lint
+composer run analyse
 
-echo "Running PHPStan..."
-composer run phpstan
-
+# Remove test results
 rm -rf ./test-results

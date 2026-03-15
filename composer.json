@@ -1,6 +1,6 @@
 {
 	"name": "mfgmicha/template-wp-plugin-blocks",
-	"description": "A clean and minimal WordPress Plugin with block.",
+	"description": "A clean and minimal WordPress Plugin with blocks.",
 	"type": "project",
 	"require": {
 		"php": ">=8.3"
@@ -21,8 +21,8 @@
 		}
 	},
 	"scripts": {
-		"phpcs": "phpcs",
-		"phpcbf": "phpcbf",
-		"phpstan": "phpstan analyse --memory-limit=512M"
+		"lint": "phpcs",
+		"lint:fix": "phpcbf",
+		"analyse": "phpstan analyse --memory-limit=512M"
 	}
 }
