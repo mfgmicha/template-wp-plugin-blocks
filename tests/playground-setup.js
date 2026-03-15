@@ -28,20 +28,19 @@ async function startPlaygroundServer() {
 			},
 		});
 	} catch (e) {
+		// eslint-disable-next-line no-console
 		console.error('Failed to start Playground:', e.message);
 		throw e;
 	}
 
-	console.log(`Playground started at ${server?.url || server?.address?.()}`);
-
 	return {
 		close: async () => {
-			console.log('Stopping WordPress Playground...');
 			try {
 				if (server.close) {
 					await server.close();
 				}
 			} catch (e) {
+				// eslint-disable-next-line no-console
 				console.warn('Error closing server:', e.message);
 			}
 		},
