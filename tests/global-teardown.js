@@ -4,4 +4,4 @@ async function globalTeardown() {
 	}
 }
 
-module.exports = globalTeardown;
+export default globalTeardown;

@@ -1,7 +1,7 @@
-const { runCLI } = require('@wp-playground/cli');
-const path = require('path');
+import { runCLI } from '@wp-playground/cli';
+import { resolve } from 'path';
 
-const projectRoot = path.resolve(__dirname, '..');
+const projectRoot = resolve(__dirname, '..');
 
 async function startPlaygroundServer() {
 	let server;
@@ -19,7 +19,6 @@ async function startPlaygroundServer() {
 				},
 			],
 			blueprint: {
-				preferredVersions: { wp: 'latest', php: '8.4' },
 				steps: [
 					{
 						step: 'activatePlugin',
@@ -50,4 +49,4 @@ async function startPlaygroundServer() {
 	};
 }
 
-module.exports = { startPlaygroundServer };
+export { startPlaygroundServer };

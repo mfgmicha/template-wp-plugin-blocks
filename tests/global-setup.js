@@ -1,8 +1,8 @@
-const { startPlaygroundServer } = require('./playground-setup');
+import { startPlaygroundServer } from './playground-setup';
 
 async function globalSetup() {
 	const server = await startPlaygroundServer();
 	global.__PLAYWRIGHT_SERVER__ = server;
 }
 
-module.exports = globalSetup;
+export default globalSetup;
