@@ -1,4 +1,4 @@
-const { startPlaygroundServer } = require( './playground-setup' );
+const { startPlaygroundServer } = require('./playground-setup');
 
 async function globalSetup() {
 	const server = await startPlaygroundServer();

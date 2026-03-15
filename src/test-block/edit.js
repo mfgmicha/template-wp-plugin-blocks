@@ -31,8 +31,8 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Test Block – hello from the editor!', 'test-block' ) }
+		<p {...useBlockProps()}>
+			{__('Test Block – hello from the editor!', 'test-block')}
 		</p>
 	);
 }

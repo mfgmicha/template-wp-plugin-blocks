@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-export default defineConfig( {
+export default defineConfig({
 	testDir: './specs/',
 	timeout: 30000,
 	expect: {
@@ -19,7 +19,7 @@ export default defineConfig( {
 		{
 			name: 'chromium',
 			use: {
-				...devices[ 'Desktop Chrome' ],
+				...devices['Desktop Chrome'],
 				launchOptions: {
 					args: [
 						'--disable-proxy-bypass',
@@ -29,6 +29,6 @@ export default defineConfig( {
 			},
 		},
 	],
-	globalSetup: require.resolve( './global-setup.js' ),
-	globalTeardown: require.resolve( './global-teardown.js' ),
-} );
+	globalSetup: require.resolve('./global-setup.js'),
+	globalTeardown: require.resolve('./global-teardown.js'),
+});
