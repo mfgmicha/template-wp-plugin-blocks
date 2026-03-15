@@ -3,7 +3,12 @@
 # Check if build is current
 npm run build
 
-# Code quality check
+# JS Code quality check
+npm run format
+npm run lint:css
+npm run lint:js
+
+# PHP Code quality check
 composer run lint
 composer run analyse
 
