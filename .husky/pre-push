@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+echo "Running build..."
+npm run build
+
+echo "Running PHPCS..."
+composer run phpcs
+
+echo "Running PHPStan..."
+composer run phpstan

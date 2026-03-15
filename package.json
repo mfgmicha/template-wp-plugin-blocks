@@ -14,7 +14,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"prepare": "husky install",
+		"prepare": "husky",
 		"test": "npx playwright test"
 	},
 	"devDependencies": {
