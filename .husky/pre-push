@@ -9,6 +9,7 @@ npm run lint:css
 npm run lint:js
 
 # PHP Code quality check
+composer run lint:fix
 composer run lint
 composer run analyse
 
