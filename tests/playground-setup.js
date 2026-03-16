@@ -11,6 +11,8 @@ async function startPlaygroundServer() {
 			php: '8.3',
 			wp: 'latest',
 			port: 8890,
+			reset: true,
+			login: true,
 			mount: [
 				{
 					hostPath: projectRoot,
@@ -23,6 +25,11 @@ async function startPlaygroundServer() {
 					{
 						step: 'activatePlugin',
 						pluginPath: 'template-wp-plugin-blocks/plugin.php',
+					},
+					{
+						step: 'wp-cli',
+						command:
+							'wp post create --post_title="Test Block Post" --post_slug="test-block" --post_type=page --post_status=publish --post_content="<!-- wp:mfgmicha/example-dynamic -->"',
 					},
 				],
 			},
