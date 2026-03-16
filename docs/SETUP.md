@@ -19,7 +19,7 @@ Search and replace these placeholders in your new plugin:
 |-------------|---------------|-------------|
 | `template-wp-plugin-blocks` | `my-awesome-blocks` | Package name (kebab-case) |
 | `Template WP Plugin Blocks` | `My Awesome Blocks` | Plugin display name |
-| `template-block` | `awesome-block` | Block folder name (kebab-case) |
+| `example-dynamic` | `awesome-block` | Block folder name (kebab-case) |
 | `mfgmicha_` | `myprefix_` | PHP function prefix |
 | `TemplateWpPluginBlocks` | `MyAwesomeBlocks` | PHP package name |
 
@@ -45,7 +45,7 @@ Update PHP code:
 - Function prefix (e.g., change `mfgmicha_block_init` to `myprefix_block_init`)
 - Package name in `@package` declaration
 
-### src/template-block/
+### src/example-dynamic/
 
 1. Rename the folder to your block name (e.g., `src/awesome-block/`)
 2. Update `block.json`:
@@ -120,16 +120,14 @@ Then upload the generated ZIP to your WordPress site.
 
 This template supports multiple blocks. To add a new block:
 
-1. Create a new folder under `src/` (e.g., `src/my-second-block/`)
-2. Copy the structure from `template-block/`:
-   - `block.json`
-   - `index.js`
-   - `edit.js`
-   - `save.js`
-   - `style.scss`
-   - `editor.scss`
-3. Update all files with your block's name and functionality
-4. Run `npm run build` - the build script automatically discovers all blocks
+1. Run the scaffolding command:
+   ```bash
+   npm run new
+   ```
+   This uses `@wordpress/create-block` to scaffold a new block.
+
+2. Update the generated files with your block's functionality
+3. Run `npm run build` - the build script automatically discovers all blocks
 
 ## Verification Checklist
 

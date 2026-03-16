@@ -8,7 +8,7 @@
 	"scripts": {
 		"start": "wp-playground-cli server --auto-mount --blueprint=.wordpress/blueprint.local.json",
 		"build": "wp-scripts build --blocks-manifest",
-		"new": "wp-create-block --no-plugin --namespace=mfgmicha --target-dir=src",
+		"new": "wp-create-block --no-plugin --namespace=mfgmicha",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
