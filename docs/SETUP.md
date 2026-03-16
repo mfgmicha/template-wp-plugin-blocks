@@ -122,12 +122,15 @@ This template supports multiple blocks. To add a new block:
 
 1. Run the scaffolding command:
    ```bash
-   npm run new
+   npm run new -- --slug=your-block-slug --title="Your Block Title"
    ```
    This uses `@wordpress/create-block` to scaffold a new block.
 
-2. Update the generated files with your block's functionality
-3. Run `npm run build` - the build script automatically discovers all blocks
+2. Rename the generated `src/new-block/` folder to match your block slug (without the namespace prefix).
+   For example, if your block is `mfgmicha/my-awesome-block`, rename the folder to `src/my-awesome-block/`.
+
+3. Update the generated files with your block's functionality
+4. Run `npm run build` - the build script automatically discovers all blocks
 
 ## Verification Checklist
 

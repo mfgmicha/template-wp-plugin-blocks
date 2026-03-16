@@ -67,6 +67,19 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lower
 
 This template supports multiple blocks. Each block should be in its own subfolder under `src/`. The build script uses `--blocks-manifest` to generate a blocks-manifest.php file that registers all blocks automatically.
 
+To add a new block:
+1. Run the create-block command with all options to avoid interactive prompts:
+   ```bash
+   npm run new -- --slug=your-block-slug --title="Your Block Title" --short-description="Description"
+   ```
+   Or manually run:
+   ```bash
+   npx wp-create-block --no-plugin --namespace=mfgmicha --target-dir=src/new-block --slug=your-block-slug --title="Your Block Title"
+   ```
+2. Rename the generated `src/new-block/` folder to match your block slug (without namespace prefix, e.g., `src/your-block-slug/`)
+3. Update the block files with your functionality
+4. Run `npm run build`
+
 ## Template Placeholders
 
 When creating a new plugin from this template, search and replace these values:
@@ -75,14 +88,14 @@ When creating a new plugin from this template, search and replace these values:
 |-------------|---------------|-------------|
 | `template-wp-plugin-blocks` | `my-awesome-blocks` | Package name (kebab-case) |
 | `Template WP Plugin Blocks` | `My Awesome Blocks` | Plugin display name |
-| `template-block` | `awesome-block` | Block folder name (kebab-case) |
+| `example-dynamic` | `awesome-block` | Block folder name (kebab-case) |
 | `mfgmicha_` | `myprefix_` | PHP function prefix |
 | `TemplateWpPluginBlocks` | `MyAwesomeBlocks` | PHP package name |
 
 Files containing placeholders:
 - `package.json`
 - `plugin.php`
-- `src/template-block/block.json`
+- `src/example-dynamic/block.json`
 - `.wordpress/blueprint.json`
 
 ## Requirements
