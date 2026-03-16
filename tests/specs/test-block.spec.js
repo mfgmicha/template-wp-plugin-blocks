@@ -3,7 +3,6 @@ const { test, expect } = require('@playwright/test');
 test.describe('Check Test Block', () => {
 	test('block renders on frontend', async ({ page }) => {
 		await page.goto('/test-block/');
-		await page.waitForLoadState('networkidle');
 
 		await expect(
 			page.locator(
@@ -13,16 +12,13 @@ test.describe('Check Test Block', () => {
 	});
 
 	test('block works in editor', async ({ page }) => {
-		await page.goto('/wp-admin/edit.php?post_type=post');
-		await page.waitForLoadState('networkidle');
+		await page.goto('/test-block/');
 
-		await page
-			.get_by_role('link', { name: 'Edit "Test Block Post"' })
-			.click();
-		await page.waitForLoadState('networkidle');
-
-		await expect(
-			page.locator("text=Your site doesn't include support for")
-		).not.toBeVisible();
+		await expect(page.locator('#wp-admin-bar-edit')).toBeVisible();
+		await page.locator('#wp-admin-bar-edit a').click();
+		await expect(page.url()).toContain('&action=edit');
+		
+		const locator = page.locator('iframe[name="editor-canvas"]').contentFrame();
+		await expect(locator.getByText('Example Dynamic – hello from the editor!')).toBeVisible();
 	});
 });
