@@ -15,7 +15,8 @@
 		"packages-update": "wp-scripts packages-update",
 		"zip": "wp-scripts plugin-zip",
 		"prepare": "husky",
-		"test": "npx playwright test --config=tests/playwright.config.js"
+		"test": "playwright test --config=tests/playwright.config.js",
+		"test:ui": "playwright test --ui --config=tests/playwright.config.js"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^20.4.4",
