@@ -17,8 +17,12 @@ test.describe('Check Test Block', () => {
 		await expect(page.locator('#wp-admin-bar-edit')).toBeVisible();
 		await page.locator('#wp-admin-bar-edit a').click();
 		await expect(page.url()).toContain('&action=edit');
-		
-		const locator = page.locator('iframe[name="editor-canvas"]').contentFrame();
-		await expect(locator.getByText('Example Dynamic – hello from the editor!')).toBeVisible();
+
+		const locator = page
+			.locator('iframe[name="editor-canvas"]')
+			.contentFrame();
+		await expect(
+			locator.getByText('Example Dynamic – hello from the editor!')
+		).toBeVisible();
 	});
 });
